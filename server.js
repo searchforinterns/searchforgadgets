@@ -13,6 +13,13 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/update", (req, res) => {
+  counter++;
+  res.send({
+    counter: "Counter updated from " + counter - 1 + " to " + counter,
+  });
+});
+
 app.listen(process.env.PORT || 3030, (err) => {
   if (!err) {
     console.log("Server Running good");
